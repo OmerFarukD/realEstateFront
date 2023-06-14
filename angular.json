@@ -25,9 +25,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendors/simplebar/simplebar.min.css",
+              "src/assets/css/theme-rtl.min.css",
+              "src/assets/css/theme.min.css",
+              "src/assets/css/user.min.css",
+              "src/assets/css/user-rtl.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/vendors/flatpickr/flatpickr.min.css",
+              "src/assets/vendors/glightbox/glightbox.min.css",
+              "src/assets/vendors/plyr/plyr.css",
+              "src/assets/vendors/dropzone/dropzone.min.css",
+              "src/assets/vendors/leaflet.markercluster/MarkerCluster.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/jquery/dist/jquery.js",
+              "src/assets/vendors/popper/popper.min.js",
+              "src/assets/vendors/anchorjs/anchor.min.js",
+              "src/assets/vendors/is/is.min.js",
+              "src/assets/vendors/prism/prism.js",
+              "src/assets/vendors/fontawesome/all.min.js",
+              "src/assets/vendors/lodash/lodash.min.js",
+              "src/assets/vendors/list.js/list.min.js",
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +117,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2738e8c8-fb46-415b-b1d1-a61c48ce6320"
   }
 }

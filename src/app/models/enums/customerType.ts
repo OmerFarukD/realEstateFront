@@ -1,0 +1,6 @@
+export enum CustomerType{
+  REAL_ESTATE="REAL_ESTATE",
+  THE_LESSOR="THE_LESSOR",
+  SELLING="SELLING",
+  RENTER="RENTER"
+}
