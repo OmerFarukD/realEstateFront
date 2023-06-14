@@ -1,0 +1,39 @@
+<div class="mb-3">
+  <label class="form-label" for="filterText">Başlık Giriniz.</label>
+  <input class="form-control" [(ngModel)]="filterText" id="filterText" type="text" placeholder="Emlak" />
+</div>
+<div class="table-responsive scrollbar">
+  <table class="table table-hover table-striped overflow-hidden">
+    <thead>
+    <tr>
+      <th scope="col">Emlak Id</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Oda Sayısı</th>
+      <th scope="col">Toplam Kat Sayısı</th>
+      <th scope="col"> Kat Sayısı</th>
+      <th scope="col">Alanı</th>
+      <th scope="col">Isınma Türü</th>
+      <th scope="col">Emlak Türü</th>
+      <th scope="col">Detay</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr  class="align-middle"  *ngFor="let response of realEstateResponseList |realestatefilter:filterText">
+      <td class="text-nowrap">{{response.realEstateId}}</td>
+      <td class="text-nowrap">{{response.title}}</td>
+      <td class="text-nowrap">{{response.numberOfRooms}}</td>
+      <td class="text-nowrap">{{response.numberOfFloors}}</td>
+      <td class="text-nowrap">{{response.buildingFloor}}</td>
+      <td class="text-nowrap">{{response.m2 |m2}}</td>
+      <td><span [class]="setWarmingClass(response.warmingType)">{{getWarmingTypeDisplayName(response.warmingType)}}<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
+      </td>
+      <td><span [class]="setRealEstateClass(response.realEstateType)">{{getRealEstateTypeDisplayName(response.realEstateType)}}<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
+      </td>
+      <td  class="text-nowrap">
+        <button routerLink="/realestate/detail/{{response.realEstateId}}" class="btn-falcon-primary">Detaya git</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

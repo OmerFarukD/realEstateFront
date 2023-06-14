@@ -1,0 +1,29 @@
+<div class="mb-3">
+  <label class="form-label" for="filterText">Müşteri Adını Giriniz</label>
+  <input class="form-control" [(ngModel)]="filterText" id="filterText" type="text" placeholder="Müşteri Adı: " />
+</div>
+<div class="table-responsive scrollbar">
+  <table class="table table-hover table-striped overflow-hidden">
+    <thead>
+    <tr>
+      <th scope="col">Müşteri Id</th>
+      <th scope="col">Müşteri Adı</th>
+      <th scope="col">Müşteri Soyadı</th>
+      <th scope="col">Müşteri Tipi</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefon Numarası</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  class="align-middle"  *ngFor="let customer of customerResponseList |customerFilter:filterText">
+      <td class="text-nowrap">{{customer.customerId}}</td>
+      <td class="text-nowrap">{{customer.name}}</td>
+      <td class="text-nowrap">{{customer.surname}}</td>
+      <td><span [class]="setCustomerTypeClass(customer.customerType)">{{getDisplayName(customer.customerType)}}<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
+      </td>
+      <td class="text-nowrap">{{customer.email}}</td>
+      <td class="text-nowrap">{{customer.phoneNumber}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

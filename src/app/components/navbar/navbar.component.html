@@ -1,0 +1,97 @@
+<nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
+  <script>
+    var navbarStyle = localStorage.getItem("navbarStyle");
+    if (navbarStyle && navbarStyle !== 'transparent') {
+      document.querySelector('.navbar-vertical').classList.add(`navbar-${navbarStyle}`);
+    }
+  </script>
+  <div class="d-flex align-items-center">
+    <div class="toggle-icon-wrapper">
+
+      <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Toggle Navigation" data-bs-original-title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+
+    </div>
+  </div>
+  <div class="navbar-collapse collapse show" id="navbarVerticalCollapse" style="">
+    <div class="navbar-vertical-content scrollbar">
+      <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
+
+        <li class="nav-item">
+          <!-- label-->
+          <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
+            <div class="col-auto navbar-vertical-label">Menü
+            </div>
+            <div class="col ps-0">
+              <hr class="mb-0 navbar-vertical-divider">
+            </div>
+          </div>
+          <!-- parent pages--><a routerLink="/" class="nav-link"  role="button">
+          <div class="d-flex align-items-center"><span class="nav-link-icon">
+            <svg class="fab fa-fort-awesome"></svg>
+          </span><span class="nav-link-text ps-1">Anasayfa</span>
+          </div>
+        </a>
+          <!-- parent pages--><a routerLink="/customers" class="nav-link"  role="button">
+          <div class="d-flex align-items-center">
+            <span class="nav-link-icon">
+              <svg class="far fa-id-card"></svg>
+            </span>
+            <span class="nav-link-text ps-1">Müşteriler</span>
+          </div>
+        </a>
+
+          <a routerLink="/workplaces" class="nav-link"  role="button">
+            <div class="d-flex align-items-center">
+            <span class="nav-link-icon">
+              <svg class="far fa-address-card"></svg>
+            </span>
+              <span class="nav-link-text ps-1">İş Yerleri</span>
+            </div>
+          </a>
+
+          <a  class="nav-link dropdown-indicator" href="#support-desk" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="support-desk">
+          <div class="d-flex align-items-center">
+            <span class="nav-link-icon">
+              <svg class="fas fa-building"></svg>
+            </span><span class="nav-link-text ps-1">Emlaklar</span>
+          </div>
+        </a>
+          <ul class="nav collapse" id="support-desk">
+            <li class="nav-item"><a routerLink="/realestates" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Emlak Listesi</span>
+              </div>
+            </a>
+              <!-- more inner pages-->
+            </li>
+            <li class="nav-item"><a routerLink="/realestates/byproptype" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Emlak Türüne Göre</span>
+              </div>
+            </a>
+              <!-- more inner pages-->
+            </li>
+            <li class="nav-item"><a routerLink="/realestates/byarea" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">M2 Alana Göre Emlaklar</span>
+              </div>
+            </a>
+            </li>
+            <li class="nav-item"><a routerLink="/realestates/byfloors" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Kat Sayısı Emlaklar</span>
+              </div>
+            </a>
+            </li>
+            <li class="nav-item"><a routerLink="/realestates/bywarmingtype" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Isınma Türüne Göre</span>
+              </div>
+            </a>
+            </li>
+            <li class="nav-item"><a routerLink="/realestates/byrooms" class="nav-link" >
+              <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Oda Sayısına Göre</span>
+              </div>
+            </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

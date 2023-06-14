@@ -1,0 +1,45 @@
+<h1>Emlak Bilgisi Detay Sayfasına Hoş geldiniz.</h1>
+
+
+<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Emlak detaylarını göster</button>
+<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg mt-6" role="document">
+    <div class="modal-content border-0">
+      <div class="position-absolute top-0 end-0 mt-3 me-3 z-index-1">
+        <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="bg-light rounded-top-lg py-3 ps-4 pe-6">
+          <h4 class="mb-1" style="margin-left: 50px" id="staticBackdropLabel">Emlak Detayları</h4>
+        </div>
+        <div class="p-4">
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="d-flex"><span class="fa-stack ms-n1 me-3"><i class="fas fa-circle fa-stack-2x text-200"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-tag" data-fa-transform="shrink-2"></i></span>
+              <div class="d-flex"><span class="fa-stack ms-n1 me-3"><i class="fas fa-circle fa-stack-2x text-200"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-align-left" data-fa-transform="shrink-2"></i></span>
+                <div class="flex-1">
+                  <h5 class="mb-2 fs-0"> Açıklama</h5>
+                  <p class="text-word-break fs--1"> <strong>Müşteri Adı </strong> : {{detail.name}} </p>
+                  <p class="text-word-break fs--1"> <strong>Müşteri SoyAdı </strong> : {{detail.surname}} </p>
+                  <p class="text-word-break fs--1"> <strong>Emlak Alanı</strong> : {{detail.m2 |m2}}</p>
+                  <p class="text-word-break fs--1"> <strong>Kat Sayısı</strong> : {{detail.buildingFloor}}</p>
+                  <p class="text-word-break fs--1"> <strong>Emlak Başlığı</strong> : {{detail.title}}</p>
+                  <p class="text-word-break fs--1"> <strong>Emlak Açıklaması</strong> : {{detail.description}}</p>
+                  <p class="text-word-break fs--1"> <strong>Emlak Tipi</strong> :
+                    <span [class]="setRealEstateClass(detail.realEstateType)">{{getRealEstateDisplayName(detail.realEstateType)}}</span></p>
+                  <p class="text-word-break fs--1"> <strong>Isınma Tipi</strong> :
+                    <span [class]="setWarmingClass(detail.warmingType)">{{getWarmingDisplayName(detail.warmingType)}}</span></p>
+                  <p class="text-word-break fs--1"> <strong>Oda Sayısı</strong> : {{detail.numberOfRooms}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <button class="btn-falcon-success">Yazdır</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
